@@ -15,6 +15,6 @@ RELEASE_CODES = ['!','rev','v','alternate','alt','o','beta','proto','alpha','pro
 EXTRA_COUNTRY_CODES = {'Spain': 'Spain', 'Es': 'Spain', 'spain': 'Spain', 'es': 'Spain', 'Europe':'Europe', 'Eu':'Europe', 'English': 'English', 'En': 'English', 'en': 'English',}
 
 # Custom codes to skip
-SKIP_CODES = ['Beta', 'Demo',  'Japan', 'China', 'Korea', 'Italy', 'Germany', 'France', 'Netherlands', 'Asia', 'Russia', 'Japan, Asia', 'Japan, Corea', 'Norway', 'Australia']
+SKIP_CODES = ['Beta', 'Demo',  'Japan', 'China', 'Korea', 'Italy', 'Germany', 'France', 'Netherlands', 'Asia', 'Russia', 'Portugal', 'Belgium', 'Switzerland', 'Sweden', 'Japan, Asia', 'Japan, Korea', 'Norway', 'Australia', 'Australia, New Zealand']
 
 COUNTRY_CODES = {**DEFAULT_COUNTRY_CODES, **EXTRA_COUNTRY_CODES}
