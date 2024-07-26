@@ -191,6 +191,7 @@ class RomSet:
 
             is_main = True
             main = None
+            parts_of_main = list()
             
             for rom in sorted(title['roms'], key=lambda x: (x.region_rank(self.rank_table), *x.build_rank(), \
                 x.timestamp_rank(),-x.get_disc_number()), reverse=True):            
@@ -198,6 +199,9 @@ class RomSet:
                 # Check if active rom is part of main rom.
                 if not is_main:
                     is_part_of_main = rom.is_part_of_main_of(main)
+                
+                if is_part_of_main:
+                    parts_of_main.append(rom)
 
                 # Choose action to display for active rom.
                 if (is_main or is_part_of_main) and not rom.force_skip(): action = Fore.GREEN + 'OK' + Style.RESET_ALL
@@ -213,6 +217,7 @@ class RomSet:
                 continue
             else:
                 self.download_roms.append(main)
+                self.download_roms.extend(parts_of_main)
             
         print('total unique files: {}'.format(len(self.titles)))
         print('total files       : {}'.format(len(self.download_roms)))        
